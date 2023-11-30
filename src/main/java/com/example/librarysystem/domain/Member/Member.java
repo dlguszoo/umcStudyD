@@ -1,16 +1,12 @@
-package com.example.librarysystem.domain.User;
+package com.example.librarysystem.domain.Member;
 
-import com.example.librarysystem.domain.Book.Book;
 import com.example.librarysystem.domain.Level.Level;
 import com.example.librarysystem.domain.common.BaseEntity;
-import com.example.librarysystem.domain.mapping.Rent.Rent;
-import com.example.librarysystem.domain.mapping.Reserve.Reserve;
-import com.example.librarysystem.domain.mapping.Saved.Saved;
+import com.example.librarysystem.domain.Rent.Rent;
+import com.example.librarysystem.domain.Reserve.Reserve;
+import com.example.librarysystem.domain.Saved.Saved;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,9 +14,10 @@ import java.util.List;
 
 @Entity
 @Getter
-@Setter
+@Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class User extends BaseEntity {
+@AllArgsConstructor
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,14 +48,5 @@ public class User extends BaseEntity {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "level_id")
     private Level level;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Rent> rentList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Reserve> reserveList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Saved> savedList = new ArrayList<>();
 
 }

@@ -1,20 +1,18 @@
-package com.example.librarysystem.domain.mapping.Rent;
+package com.example.librarysystem.domain.Rent;
 
-import com.example.librarysystem.domain.Book.Book;
-import com.example.librarysystem.domain.User.User;
+import com.example.librarysystem.domain.Book.Entity.Book;
+import com.example.librarysystem.domain.Member.Member;
 import com.example.librarysystem.domain.common.BaseEntity;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Entity
 @Getter
-@Setter
+@Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 public class Rent extends BaseEntity {
 
     @Id
@@ -35,5 +33,5 @@ public class Rent extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private User user;
+    private Member member;
 }

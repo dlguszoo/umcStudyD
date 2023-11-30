@@ -2,15 +2,13 @@ package com.example.librarysystem.domain.Level;
 
 import com.example.librarysystem.domain.common.BaseEntity;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
-@Setter
+@Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 public class Level extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
