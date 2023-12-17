@@ -34,5 +34,4 @@ public class Book extends BaseEntity {
 
     @Column(nullable = false, length = 20)
     private String classification;
-
 }

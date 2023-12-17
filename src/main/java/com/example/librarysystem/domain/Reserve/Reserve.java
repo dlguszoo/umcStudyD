@@ -1,7 +1,7 @@
 package com.example.librarysystem.domain.Reserve;
 
 import com.example.librarysystem.domain.Book.Entity.Book;
-import com.example.librarysystem.domain.Member.Member;
+import com.example.librarysystem.domain.Member.Entity.Member;
 import com.example.librarysystem.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
