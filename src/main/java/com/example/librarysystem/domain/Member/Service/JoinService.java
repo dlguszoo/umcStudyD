@@ -18,6 +18,7 @@ public class JoinService {
 
         boolean isMember = memberRepository.existsByMemberEmail(joinDto.getEmail());
         if (isMember) {
+            System.out.println("이미 가입된 회원입니다");
             return;
         }
 
