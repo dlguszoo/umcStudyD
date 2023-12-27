@@ -1,6 +1,9 @@
 package com.example.librarysystem.domain.Member.Entity;
 
+import com.example.librarysystem.domain.Book.Dto.BookRequestDTO;
 import com.example.librarysystem.domain.Level.Level;
+import com.example.librarysystem.domain.Member.Dto.JoinDto;
+import com.example.librarysystem.domain.Member.Dto.MemberRequestDto;
 import com.example.librarysystem.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -19,16 +22,16 @@ public class Member extends BaseEntity {
     private Long id;
 
     @Column(nullable = false, length = 20, unique = true)
-    private String phoneNum;
+    private String password;
 
     @Column(nullable = false, length = 30, unique = true)
     private String email;
 
+    @Column(nullable = false, length = 20, unique = true)
+    private String phoneNum;
+
     @Column(nullable = false, length = 10)
     private String name;
-
-    @Column(nullable = false, length = 20, unique = true)
-    private String nickname;
 
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "VARCHAR(10)")

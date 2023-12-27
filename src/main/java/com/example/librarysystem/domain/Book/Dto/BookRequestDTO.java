@@ -6,20 +6,10 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class BookRegisterDTO {
-    @NonNull
+public class BookRequestDTO {
     private String name;
-
-    @NonNull
     private String publisher;
-
-    @NonNull
     private String author;
-
-    @NonNull
     private String description;
-
-    @NonNull
     private String classification;
-
 }
